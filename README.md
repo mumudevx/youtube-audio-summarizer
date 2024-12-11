@@ -1,2 +1,2 @@
 # youtube-audio-summarizer
-YouTube Audio Summarization
+This repository created for testing purposes, try on YouTube audio download and summarize it via Whisper.
