@@ -4,4 +4,5 @@ public class OpenAiSettings
 {
     public string ApiKey { get; set; } = null!;
     public string TranscriptionModel { get; set; } = null!;
+    public string YouTubeSummarizerAssistantId { get; set; } = null!;
 }

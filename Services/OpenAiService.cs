@@ -39,7 +39,8 @@ public class OpenAiService(OpenAiSettings openAiSettings) : IOpenAiService
             InitialMessages = { content }
         };
 
-        var threadRunResult = assistantClient.CreateThreadAndRun(openAiSettings.TranscriptionModel, threadOptions);
+        var threadRunResult = assistantClient
+            .CreateThreadAndRun(openAiSettings.YouTubeSummarizerAssistantId, threadOptions);
 
         do
         {
