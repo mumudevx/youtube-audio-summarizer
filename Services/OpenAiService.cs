@@ -1,7 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using OpenAI.Assistants;
-using OpenAI.Audio;
-
 namespace YouTubeDownloader.Services;
 
 public interface IOpenAiService

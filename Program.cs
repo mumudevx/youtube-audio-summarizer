@@ -5,10 +5,10 @@ const string videoId = "GH_JLA-fkBY";
 var settingsManagement = new SettingsManager();
 var openAiSettings = settingsManagement.OpenAiSettings;
 
-
 // Services
 var youTubeService = new YouTubeService();
 var openAiService = new OpenAiService(openAiSettings);
+var fileService = new FileService();
 
 // Get Audio File From YouTube
 var audioFilePath = await youTubeService.DownloadAudioFromVideoId(videoId);
@@ -24,5 +24,8 @@ if (audioFilePath != null)
     // Get Summarization of Video via OpenAI Assistant
     var summarizationOfContent = openAiService.GetSummarizationOfContent(transcriptionContent);
 
-    Console.WriteLine(summarizationOfContent);
+    // Save Summarization to File
+    var summaryFilePath = await fileService.SaveSummaryToFile(summarizationOfContent, "summary");
+
+    Console.WriteLine($"Summary saved to {summaryFilePath}");
 }
